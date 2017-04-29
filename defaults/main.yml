@@ -5,8 +5,8 @@ minecraft_url: https://s3.amazonaws.com/Minecraft.Download/versions
 minecraft_user: "{{ minecraft_server }}"
 minecraft_group: "{{ minecraft_server }}"
 minecraft_home: /srv/{{ minecraft_server }}
-minecraft_max_memory: 1024M
-minecraft_initial_memory: 1024M
+minecraft_max_memory: 10240M
+minecraft_initial_memory: 10240M
 minecraft_service_name: "{{ minecraft_server }}"
 minecraft_supervisor_name: "{{ minecraft_service_name }}"
 minecraft_whitelist: []
