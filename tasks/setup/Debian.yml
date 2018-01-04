@@ -1,8 +1,14 @@
+- name: install jessie backports repo
+  apt_repository:
+    repo: deb http://http.debian.net/debian jessie-backports main
+    state: present
+
 - name: install Minecraft dependencies
   apt:
     name: "{{ item }}"
     state: present
     install_recommends: no
+    update_cache: yes
   with_items: "{{ dependencies }}"
 
 - name: install Spigot dependencies
