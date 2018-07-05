@@ -41,3 +41,26 @@
 - meta: flush_handlers
 
 - include: "{{ minecraft_hook_after_start | default('empty.yml') }}"
+
+- name: Delete world directory
+  file:
+    state: absent
+    path: /home/deploy/world
+
+- name: "Clone world"
+  git:
+    repo: https://github.com/sufyanadam/minecraft-world.git
+    dest: /home/deploy/world
+    accept_hostkey: yes
+
+- name: Recursively mod 777 the world directory
+  file:
+    path: /home/deploy/world
+    mode: 0777
+    state: directory
+    recurse: yes
+
+- name: Delete session.lock file
+  file:
+    path: /home/deploy/world/session.lock
+    state: absent
