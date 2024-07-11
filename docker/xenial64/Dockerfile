@@ -1,6 +1,6 @@
 # vim: set ft=dockerfile:
 
-FROM ubuntu:xenial
+FROM ubuntu:xenial-20201014
 
 # Colour output.
 ENV TERM=xterm
