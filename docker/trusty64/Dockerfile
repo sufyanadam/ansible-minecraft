@@ -1,6 +1,6 @@
 # vim: set ft=dockerfile:
 
-FROM ubuntu:trusty
+FROM ubuntu:trusty-20190425
 
 # Colour output.
 ENV TERM=xterm
